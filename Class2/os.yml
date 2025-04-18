@@ -1,0 +1,8 @@
+- hosts: all
+  become: yes
+  tasks:
+  - name: Print OS
+    debug: 
+      msg: "{{ ansible_distribution }}"
+  - name: Install Apache
+    include_tasks: "{{ ansible_distribution }}.yml"
